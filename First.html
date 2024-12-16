@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Image Gallery with Hover Effects</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f4f4f4;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+            filter: brightness(80%);
+        }
+
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(100%);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .gallery-item:hover .caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="hd.jpg" alt="Image 1">
+            <div class="caption">Image 1</div>
+        </div>
+        <div class="gallery-item">
+            <img src="hd2.jpg" alt="Image 2">
+            <div class="caption">Image 2</div>
+        </div>
+        <div class="gallery-item">
+            <img src="hd3.jpeg" alt="Image 3">
+            <div class="caption">Image 3</div>
+        </div>
+        <div class="gallery-item">
+            <img src="hd4.jpeg" alt="Image 4">
+            <div class="caption">Image 4</div>
+        </div>
+    </div>
+</body>
+</html>
